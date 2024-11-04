@@ -1,0 +1,1212 @@
+18:57:47 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:62:1: warning: data definition has no type or storage class
+   62 | ssd1306_Init();
+      | ^~~~~~~~~~~~
+../Core/Src/main.c:62:1: warning: type defaults to 'int' in declaration of 'ssd1306_Init' [-Wimplicit-int]
+../Core/Src/main.c:62:1: error: conflicting types for 'ssd1306_Init'; have 'int()'
+In file included from ../Core/Src/main.c:24:
+C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306/ssd1306.h:156:6: note: previous declaration of 'ssd1306_Init' with type 'void(void)'
+  156 | void ssd1306_Init(void);
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c:63:1: warning: data definition has no type or storage class
+   63 | ssd1306_Fill(White);
+      | ^~~~~~~~~~~~
+../Core/Src/main.c:63:1: warning: type defaults to 'int' in declaration of 'ssd1306_Fill' [-Wimplicit-int]
+../Core/Src/main.c:63:1: warning: parameter names (without types) in function declaration
+../Core/Src/main.c:63:1: error: conflicting types for 'ssd1306_Fill'; have 'int()'
+In file included from ../Core/Src/main.c:24:
+C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306/ssd1306.h:157:6: note: previous declaration of 'ssd1306_Fill' with type 'void(SSD1306_COLOR)'
+  157 | void ssd1306_Fill(SSD1306_COLOR color);
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c:64:1: warning: data definition has no type or storage class
+   64 | ssd1306_UpdateScreen();
+      | ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:64:1: warning: type defaults to 'int' in declaration of 'ssd1306_UpdateScreen' [-Wimplicit-int]
+../Core/Src/main.c:64:1: error: conflicting types for 'ssd1306_UpdateScreen'; have 'int()'
+In file included from ../Core/Src/main.c:24:
+C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306/ssd1306.h:158:6: note: previous declaration of 'ssd1306_UpdateScreen' with type 'void(void)'
+  158 | void ssd1306_UpdateScreen(void);
+      |      ^~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+19:05:08 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15008	     20	   2324	  17352	   43c8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:05:18 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15008	     20	   2324	  17352	   43c8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+19:07:15 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:98:39: error: expected ';' before 'ssd1306_UpdateScreen'
+   98 |   ssd1306_DrawCircle(10, 10, 5, Black)
+      |                                       ^
+      |                                       ;
+   99 |   ssd1306_UpdateScreen();
+      |   ~~~~~~~~~~~~~~~~~~~~                 
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+19:07:24 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15452	     20	   2324	  17796	   4584	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:08:31 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:08:52 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:09:09 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:09:30 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:09:46 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:10:09 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:10:28 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:11:05 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:11:21 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:11:36 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:11:52 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:12:14 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:12:32 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:14:59 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15008	     20	   2324	  17352	   43c8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:16:26 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15412	     20	   2324	  17756	   455c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:24:00 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:98:37: error: 'Font_6x8' undeclared (first use in this function)
+   98 |   ssd1306_WriteString("Teste OLED", Font_6x8, White);
+      |                                     ^~~~~~~~
+../Core/Src/main.c:98:37: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+19:24:23 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  17160	     20	   2324	  19504	   4c30	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:27:27 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  21768	     20	   2324	  24112	   5e30	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:27:56 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  21768	     20	   2324	  24112	   5e30	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:29:14 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  21768	     20	   2324	  24112	   5e30	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:30:18 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  20156	     20	   2324	  22500	   57e4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:30:47 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  20628	     20	   2324	  22972	   59bc	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:31:38 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  20628	     20	   2324	  22972	   59bc	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:31:59 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  20628	     20	   2324	  22972	   59bc	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:32:57 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:98:45: error: expected ';' before 'ssd1306_SetCursor'
+   98 |   ssd1306_DrawRectangle(0, 0, 50, 12, White)
+      |                                             ^
+      |                                             ;
+   99 |   ssd1306_SetCursor(10,5);
+      |   ~~~~~~~~~~~~~~~~~                          
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+19:35:28 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  19404	     20	   2324	  21748	   54f4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:35:53 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  19404	     20	   2324	  21748	   54f4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:37:19 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  19404	     20	   2324	  21748	   54f4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:37:35 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  19404	     20	   2324	  21748	   54f4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:37:52 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  19404	     20	   2324	  21748	   54f4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:39:36 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  19232	     20	   2324	  21576	   5448	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:40:33 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  20792	     20	   2324	  23136	   5a60	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:41:08 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  20792	     20	   2324	  23136	   5a60	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:41:50 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  20792	     20	   2324	  23136	   5a60	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:43:45 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Drivers/oled_ssd1306/ssd1306_fonts.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/oled_ssd1306/ssd1306_fonts.d" -MT"Drivers/oled_ssd1306/ssd1306_fonts.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/oled_ssd1306/ssd1306_fonts.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  21172	     20	   2324	  23516	   5bdc	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:46:30 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  25772	     20	   2324	  28116	   6dd4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:49:03 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  30348	     20	   2324	  32692	   7fb4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:50:52 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  30348	     20	   2324	  32692	   7fb4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:51:23 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  30348	     20	   2324	  32692	   7fb4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:52:14 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  28812	     20	   2324	  31156	   79b4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:54:26 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  30348	     20	   2324	  32692	   7fb4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:55:08 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  30348	     20	   2324	  32692	   7fb4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:55:34 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  30348	     20	   2324	  32692	   7fb4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:56:16 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  30348	     20	   2324	  32692	   7fb4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:57:51 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  30300	     20	   2324	  32644	   7f84	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+19:59:09 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  30300	     20	   2324	  32644	   7f84	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:02:52 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  25736	     20	   2324	  28080	   6db0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:05:31 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:38: error: expected ';' before 'ssd1306_UpdateScreen'
+  118 |   ssd1306_DrawCircle(0, 56, 7, White)
+      |                                      ^
+      |                                      ;
+......
+  122 |   ssd1306_UpdateScreen();
+      |   ~~~~~~~~~~~~~~~~~~~~                
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+20:05:40 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26016	     20	   2324	  28360	   6ec8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:06:43 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26016	     20	   2324	  28360	   6ec8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:07:18 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26016	     20	   2324	  28360	   6ec8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:09:23 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:119:47: error: expected ';' before 'ssd1306_UpdateScreen'
+  119 |   ssd1306_DrawRectangle(21, 49, 35, 63, White)
+      |                                               ^
+      |                                               ;
+......
+  123 |   ssd1306_UpdateScreen();
+      |   ~~~~~~~~~~~~~~~~~~~~                         
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+20:16:40 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26360	     20	   2324	  28704	   7020	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:26:39 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26504	     20	   2324	  28848	   70b0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:26:56 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26504	     20	   2324	  28848	   70b0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:27:18 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26504	     20	   2324	  28848	   70b0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:27:47 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26504	     20	   2324	  28848	   70b0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:29:28 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26512	     20	   2324	  28856	   70b8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:29:50 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26520	     20	   2324	  28864	   70c0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:30:23 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26512	     20	   2324	  28856	   70b8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:30:56 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26512	     20	   2324	  28856	   70b8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:31:32 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26512	     20	   2324	  28856	   70b8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:37:35 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  26540	     20	   2324	  28884	   70d4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:46:32 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  27784	     20	   2324	  30128	   75b0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:47:50 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  27280	     20	   2324	  29624	   73b8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:48:31 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  27272	     20	   2324	  29616	   73b0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:48:56 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  27272	     20	   2324	  29616	   73b0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:52:39 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  27272	     20	   2324	  29616	   73b0	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:57:16 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:230:53: error: expected ';' before 'ssd1306_DrawBitmap'
+  230 |   ssd1306_DrawBitmap(0, 0, woodstock, 16, 16, White)
+      |                                                     ^
+      |                                                     ;
+  231 |   ssd1306_DrawBitmap(8,16,snoopy_48x48,48,48,White);
+      |   ~~~~~~~~~~~~~~~~~~                                 
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+20:57:37 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  27132	     20	   2324	  29476	   7324	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:58:11 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27132	     20	   2324	  29476	   7324	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+20:58:37 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  27140	     20	   2324	  29484	   732c	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+20:58:59 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  27132	     20	   2324	  29476	   7324	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+21:01:12 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15744	     20	   2324	  18088	   46a8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+21:02:32 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15756	     20	   2324	  18100	   46b4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+21:03:26 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15756	     20	   2324	  18100	   46b4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+21:04:14 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15756	     20	   2324	  18100	   46b4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+21:04:34 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15756	     20	   2324	  18100	   46b4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+21:05:06 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15756	     20	   2324	  18100	   46b4	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+21:05:25 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15744	     20	   2324	  18088	   46a8	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+21:06:09 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15912	     20	   2324	  18256	   4750	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
+21:06:47 **** Incremental Build of configuration Debug for project poc_oled_ssd1306 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_oled_ssd1306/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_oled_ssd1306.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_oled_ssd1306\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_oled_ssd1306.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_oled_ssd1306.elf
+ 
+arm-none-eabi-size  poc_oled_ssd1306.elf 
+arm-none-eabi-objdump -h -S poc_oled_ssd1306.elf  > "poc_oled_ssd1306.list"
+   text	   data	    bss	    dec	    hex	filename
+  15928	     20	   2324	  18272	   4760	poc_oled_ssd1306.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_oled_ssd1306.list
+ 
