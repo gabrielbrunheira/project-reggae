@@ -21,6 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "stdio.h"
+#include "mk_dht11.h"
 #include "ssd1306.h"
 #include "ssd1306_fonts.h"
 /* USER CODE END Includes */
@@ -45,15 +47,20 @@ I2C_HandleTypeDef hi2c1;
 
 UART_HandleTypeDef hlpuart1;
 
-/* USER CODE BEGIN PV */
+TIM_HandleTypeDef htim7;
 
+/* USER CODE BEGIN PV */
+dht11_t dht11;
+char hum[4];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
+void ssd1306_WriteTemp(uint8_t temp, uint8_t x, uint8_t y);
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_LPUART1_UART_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_TIM7_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -93,22 +100,30 @@ int main(void)
   MX_GPIO_Init();
   MX_LPUART1_UART_Init();
   MX_I2C1_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
+  init_dht11(&dht11, &htim7, DHT11_GPIO_Port, DHT11_Pin);
   ssd1306_Init();
-  ssd1306_FillRectangle(0, 0, 128, 16, White);
+  ssd1306_Fill(White);
 
-  ssd1306_SetCursor(0,0);
-  ssd1306_WriteString("OLED", Font_6x8, Black);
-
-  ssd1306_SetCursor(10,32);
-  ssd1306_WriteString("42oC", Font_11x18, White);
-  ssd1306_UpdateScreen();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+	readDHT11(&dht11);
+
+	ssd1306_WriteTemp(dht11.temperature,2,0);
+
+	sprintf(hum, "%d%%", dht11.humidty);
+	ssd1306_SetCursor(2, 18);
+	ssd1306_WriteString(hum, Font_11x18, Black);
+
+	ssd1306_UpdateScreen();
+
+	HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -116,6 +131,18 @@ int main(void)
   /* USER CODE END 3 */
 }
 
+void ssd1306_WriteTemp(uint8_t temp, uint8_t x, uint8_t y)
+{
+	char cTemp[3];
+
+	sprintf(cTemp, "%d", temp);
+	ssd1306_SetCursor(x, y);
+	ssd1306_WriteString(cTemp, Font_11x18, Black);
+	ssd1306_SetCursor(x+2*11+1, y);
+	ssd1306_WriteString("o", Font_7x10, Black);
+	ssd1306_SetCursor(x+3*11-3, y);
+	ssd1306_WriteString("C", Font_11x18, Black);
+}
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -258,6 +285,44 @@ static void MX_LPUART1_UART_Init(void)
 }
 
 /**
+  * @brief TIM7 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM7_Init(void)
+{
+
+  /* USER CODE BEGIN TIM7_Init 0 */
+
+  /* USER CODE END TIM7_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM7_Init 1 */
+
+  /* USER CODE END TIM7_Init 1 */
+  htim7.Instance = TIM7;
+  htim7.Init.Prescaler = 169;
+  htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim7.Init.Period = 65535;
+  htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim7, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM7_Init 2 */
+
+  /* USER CODE END TIM7_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -277,6 +342,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(DHT11_GPIO_Port, DHT11_Pin, GPIO_PIN_SET);
+
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
@@ -289,6 +357,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : DHT11_Pin */
+  GPIO_InitStruct.Pin = DHT11_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(DHT11_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);

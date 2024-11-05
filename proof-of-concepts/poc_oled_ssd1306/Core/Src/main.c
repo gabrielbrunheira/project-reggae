@@ -233,7 +233,7 @@ int main(void)
   ssd1306_FillRectangle(48, 16, 64, 63, White);
   ssd1306_UpdateScreen();
 
-  /*  HAL_Delay(3000);
+  HAL_Delay(3000);
   ssd1306_Fill(Black);
 
   ssd1306_FillRectangle(0, 0, 128, 15, White);
@@ -267,7 +267,7 @@ int main(void)
   vertexes[3] = (SSD1306_VERTEX){.x = 47, .y = 49};
   ssd1306_Polyline(vertexes, 4, White);
 
-  ssd1306_UpdateScreen();*/
+  ssd1306_UpdateScreen();
   /* USER CODE END 2 */
 
   /* Infinite loop */
