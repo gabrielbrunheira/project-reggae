@@ -194,3 +194,48 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-11-04 23:48:56.723
 !MESSAGE Existing sessions are:
+!SESSION 2024-11-05 22:12:24.631 -----------------------------------------------
+eclipse.buildId=Version 1.14.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-11-05 22:12:39.239
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-11-05 22:12:39.249
+!MESSAGE Log4j2 initialized with config file C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-11-05 22:12:46.147
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-05 22:14:02.357
+!MESSAGE Indexed 'poc_adc_capacitive_soil' (23 sources, 83 headers) in 5.29 sec: 5,650 declarations; 28,921 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0058%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-05 22:43:23.055
+!MESSAGE Indexed 'poc_adc_capacitive_soil' (30 sources, 95 headers) in 1.76 sec: 8,427 declarations; 53,195 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0032%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-05 23:28:28.104
+!MESSAGE Indexed 'poc_rtc' (23 sources, 83 headers) in 2.82 sec: 5,650 declarations; 28,921 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0058%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-06 00:00:58.956
+!MESSAGE Indexed 'poc_rtc' (29 sources, 94 headers) in 1.59 sec: 7,953 declarations; 45,667 references; 0 unresolved inclusions; 1 syntax errors; 5 unresolved names (0.0093%)
+
+!ENTRY org.eclipse.core.jobs 4 2 2024-11-06 00:17:30.990
+!MESSAGE An internal error occurred during: "Execute Debug Command".
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: assertion failed: The application has not been initialized.
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:113)
+	at org.eclipse.core.internal.runtime.InternalPlatform.assertInitialized(InternalPlatform.java:183)
+	at org.eclipse.core.internal.runtime.InternalPlatform.getAdapterManager(InternalPlatform.java:204)
+	at org.eclipse.core.runtime.Platform.getAdapterManager(Platform.java:609)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.getAdapter(GdbLaunch.java:454)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.disconnect(GdbLaunch.java:338)
+	at org.eclipse.debug.internal.core.commands.DisconnectCommand.execute(DisconnectCommand.java:35)
+	at org.eclipse.debug.internal.core.commands.ForEachCommand.doExecute(ForEachCommand.java:36)
+	at org.eclipse.debug.core.commands.AbstractDebugCommand$1.run(AbstractDebugCommand.java:215)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-11-06 00:17:31.351
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
