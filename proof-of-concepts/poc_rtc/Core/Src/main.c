@@ -53,6 +53,7 @@ RTC_DateTypeDef rtc_date;
 RTC_TimeTypeDef rtc_time;
 
 char sData[9], sTime[9];
+uint8_t cnt = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -106,7 +107,7 @@ int main(void)
   ssd1306_Fill(Black);
 
   rtc_date = (RTC_DateTypeDef){.WeekDay = 3, .Date = 7, .Month = 11, .Year = 24};
-  rtc_time = (RTC_TimeTypeDef){.Hours = 22, .Minutes = 16, .Seconds= 0};
+  rtc_time = (RTC_TimeTypeDef){.Hours = 23, .Minutes = 11, .Seconds= 0};
 
   HAL_RTC_SetDate(&hrtc, &rtc_date, RTC_FORMAT_BIN);
   HAL_RTC_SetTime(&hrtc, &rtc_time, RTC_FORMAT_BIN);
@@ -122,6 +123,8 @@ int main(void)
 	  HAL_RTC_GetTime(&hrtc, &rtc_time, RTC_FORMAT_BIN);
 	  HAL_RTC_GetDate(&hrtc, &rtc_date, RTC_FORMAT_BIN);
 
+	  //HAL_RTCEx_GetTimeStamp(&hrtc, &rtc_time, &rtc_date, RTC_FORMAT_BIN);
+
 	  sprintf(sData, "%02d/%02d/%02d", rtc_date.Date, rtc_date.Month, rtc_date.Year);
 	  sprintf(sTime, "%02d:%02d:%02d", rtc_time.Hours, rtc_time.Minutes, rtc_time.Seconds);
 
@@ -133,6 +136,8 @@ int main(void)
 
 	  ssd1306_UpdateScreen();
 	  HAL_Delay(1000);
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -301,6 +306,7 @@ static void MX_RTC_Init(void)
 
   RTC_TimeTypeDef sTime = {0};
   RTC_DateTypeDef sDate = {0};
+  RTC_AlarmTypeDef sAlarm = {0};
 
   /* USER CODE BEGIN RTC_Init 1 */
 
@@ -342,8 +348,31 @@ static void MX_RTC_Init(void)
   sDate.Month = RTC_MONTH_NOVEMBER;
   sDate.Date = 0x5;
   sDate.Year = 0x24;
-
   if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Enable the Alarm A
+  */
+  sAlarm.AlarmTime.Hours = 0x0;
+  sAlarm.AlarmTime.Minutes = 0x0;
+  sAlarm.AlarmTime.Seconds = 0x13;
+  sAlarm.AlarmTime.SubSeconds = 0x0;
+  sAlarm.AlarmMask = RTC_ALARMMASK_DATEWEEKDAY|RTC_ALARMMASK_HOURS
+                              |RTC_ALARMMASK_MINUTES;
+  sAlarm.AlarmSubSecondMask = RTC_ALARMSUBSECONDMASK_ALL;
+  sAlarm.AlarmDateWeekDaySel = RTC_ALARMDATEWEEKDAYSEL_DATE;
+  sAlarm.AlarmDateWeekDay = 0x1;
+  sAlarm.Alarm = RTC_ALARM_A;
+  if (HAL_RTC_SetAlarm_IT(&hrtc, &sAlarm, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Enable the TimeStamp
+  */
+  if (HAL_RTCEx_SetTimeStamp(&hrtc, RTC_TIMESTAMPEDGE_FALLING, RTC_TIMESTAMPPIN_DEFAULT) != HAL_OK)
   {
     Error_Handler();
   }
@@ -373,12 +402,6 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : B1_Pin */
-  GPIO_InitStruct.Pin = B1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
-
   /*Configure GPIO pin : LD2_Pin */
   GPIO_InitStruct.Pin = LD2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -386,16 +409,36 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
-  /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
-
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc) {
 
+  RTC_AlarmTypeDef sAlarm;
+  char sTime_Alarm[9], scnt[2];
+
+  HAL_RTC_GetAlarm(hrtc, &sAlarm, RTC_ALARM_A, RTC_FORMAT_BIN);
+
+  sprintf(sTime_Alarm, "%02d:%02d:%02d", sAlarm.AlarmTime.Hours,
+		  sAlarm.AlarmTime.Minutes, sAlarm.AlarmTime.Seconds);
+  sprintf(scnt, "%d", cnt++);
+
+  ssd1306_SetCursor(2, 35);
+  ssd1306_WriteString(sTime_Alarm, Font_6x8, White);
+  ssd1306_SetCursor(2, 45);
+  ssd1306_WriteString(scnt, Font_6x8, White);
+  ssd1306_UpdateScreen();
+
+  /*if(sAlarm.AlarmTime.Seconds>58) {
+    sAlarm.AlarmTime.Seconds=0;
+  }else{
+    sAlarm.AlarmTime.Seconds=sAlarm.AlarmTime.Seconds+1;
+  }
+    while(HAL_RTC_SetAlarm_IT(hrtc, &sAlarm, FORMAT_BIN)!=HAL_OK){}*/
+  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+}
 /* USER CODE END 4 */
 
 /**
