@@ -7,45 +7,45 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00004d78  080001e0  080001e0  000101e0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000e00  08004f58  08004f58  00014f58  2**2
+  2 .rodata       00000e08  08004f58  08004f58  00014f58  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08005d58  08005d58  0002005c  2**0
+  3 .ARM.extab    00000000  08005d60  08005d60  0002005c  2**0
                   CONTENTS
-  4 .ARM          00000008  08005d58  08005d58  00015d58  2**2
+  4 .ARM          00000008  08005d60  08005d60  00015d60  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08005d60  08005d60  0002005c  2**0
+  5 .preinit_array 00000000  08005d68  08005d68  0002005c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08005d60  08005d60  00015d60  2**2
+  6 .init_array   00000004  08005d68  08005d68  00015d68  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08005d64  08005d64  00015d64  2**2
+  7 .fini_array   00000004  08005d6c  08005d6c  00015d6c  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         0000005c  20000000  08005d68  00020000  2**2
+  8 .data         0000005c  20000000  08005d70  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          000004b4  2000005c  08005dc4  0002005c  2**2
+  9 .bss          000004b4  2000005c  08005dcc  0002005c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  20000510  08005dc4  00020510  2**0
+ 10 ._user_heap_stack 00000600  20000510  08005dcc  00020510  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002005c  2**0
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  0002008c  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00012b2a  00000000  00000000  000200cf  2**0
+ 13 .debug_info   00012ac7  00000000  00000000  000200cf  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00002841  00000000  00000000  00032bf9  2**0
+ 14 .debug_abbrev 0000282c  00000000  00000000  00032b96  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000f10  00000000  00000000  00035440  2**3
+ 15 .debug_aranges 00000f10  00000000  00000000  000353c8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00000b9b  00000000  00000000  00036350  2**0
+ 16 .debug_rnglists 00000b9b  00000000  00000000  000362d8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00026c5a  00000000  00000000  00036eeb  2**0
+ 17 .debug_macro  00026c5a  00000000  00000000  00036e73  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000140a9  00000000  00000000  0005db45  2**0
+ 18 .debug_line   000140a7  00000000  00000000  0005dacd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000f3d4a  00000000  00000000  00071bee  2**0
+ 19 .debug_str    000f3d3a  00000000  00000000  00071b74  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  000042f0  00000000  00000000  00165938  2**2
+ 20 .debug_frame  000042f0  00000000  00000000  001658b0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000007e  00000000  00000000  00169c28  2**0
+ 21 .debug_line_str 0000007e  00000000  00000000  00169ba0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -419,7 +419,7 @@ Disassembly of section .text:
 int main(void)
 {
  80005bc:	b580      	push	{r7, lr}
- 80005be:	b082      	sub	sp, #8
+ 80005be:	b088      	sub	sp, #32
  80005c0:	af02      	add	r7, sp, #8
   /* USER CODE END 1 */
 
@@ -451,133 +451,135 @@ int main(void)
   /* USER CODE BEGIN 2 */
   ssd1306_Init();
  80005da:	f003 fe0f 	bl	80041fc <ssd1306_Init>
-  ssd1306_Fill(White);
- 80005de:	2001      	movs	r0, #1
+  ssd1306_Fill(Black);
+ 80005de:	2000      	movs	r0, #0
  80005e0:	f003 fe76 	bl	80042d0 <ssd1306_Fill>
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
+  rtc_date = (RTC_DateTypeDef){.WeekDay = 3, .Date = 7, .Month = 11, .Year = 24};
+ 80005e4:	4b33      	ldr	r3, [pc, #204]	; (80006b4 <main+0xf8>)
+ 80005e6:	2203      	movs	r2, #3
+ 80005e8:	701a      	strb	r2, [r3, #0]
+ 80005ea:	4b32      	ldr	r3, [pc, #200]	; (80006b4 <main+0xf8>)
+ 80005ec:	220b      	movs	r2, #11
+ 80005ee:	705a      	strb	r2, [r3, #1]
+ 80005f0:	4b30      	ldr	r3, [pc, #192]	; (80006b4 <main+0xf8>)
+ 80005f2:	2207      	movs	r2, #7
+ 80005f4:	709a      	strb	r2, [r3, #2]
+ 80005f6:	4b2f      	ldr	r3, [pc, #188]	; (80006b4 <main+0xf8>)
+ 80005f8:	2218      	movs	r2, #24
+ 80005fa:	70da      	strb	r2, [r3, #3]
+  rtc_time = (RTC_TimeTypeDef){.Hours = 22, .Minutes = 16, .Seconds= 0};
+ 80005fc:	4b2e      	ldr	r3, [pc, #184]	; (80006b8 <main+0xfc>)
+ 80005fe:	461a      	mov	r2, r3
+ 8000600:	2300      	movs	r3, #0
+ 8000602:	6013      	str	r3, [r2, #0]
+ 8000604:	6053      	str	r3, [r2, #4]
+ 8000606:	6093      	str	r3, [r2, #8]
+ 8000608:	60d3      	str	r3, [r2, #12]
+ 800060a:	6113      	str	r3, [r2, #16]
+ 800060c:	4b2a      	ldr	r3, [pc, #168]	; (80006b8 <main+0xfc>)
+ 800060e:	2216      	movs	r2, #22
+ 8000610:	701a      	strb	r2, [r3, #0]
+ 8000612:	4b29      	ldr	r3, [pc, #164]	; (80006b8 <main+0xfc>)
+ 8000614:	2210      	movs	r2, #16
+ 8000616:	705a      	strb	r2, [r3, #1]
+
+  HAL_RTC_SetDate(&hrtc, &rtc_date, RTC_FORMAT_BIN);
+ 8000618:	2200      	movs	r2, #0
+ 800061a:	4926      	ldr	r1, [pc, #152]	; (80006b4 <main+0xf8>)
+ 800061c:	4827      	ldr	r0, [pc, #156]	; (80006bc <main+0x100>)
+ 800061e:	f002 fd97 	bl	8003150 <HAL_RTC_SetDate>
+  HAL_RTC_SetTime(&hrtc, &rtc_time, RTC_FORMAT_BIN);
+ 8000622:	2200      	movs	r2, #0
+ 8000624:	4924      	ldr	r1, [pc, #144]	; (80006b8 <main+0xfc>)
+ 8000626:	4825      	ldr	r0, [pc, #148]	; (80006bc <main+0x100>)
+ 8000628:	f002 fc99 	bl	8002f5e <HAL_RTC_SetTime>
   while (1)
   {
-	  HAL_RTC_GetDate(&hrtc, &rtc_date, RTC_FORMAT_BIN);
- 80005e4:	2200      	movs	r2, #0
- 80005e6:	492d      	ldr	r1, [pc, #180]	; (800069c <main+0xe0>)
- 80005e8:	482d      	ldr	r0, [pc, #180]	; (80006a0 <main+0xe4>)
- 80005ea:	f002 fe38 	bl	800325e <HAL_RTC_GetDate>
+	  /** As stated in its comment, HAL_RTC_GetTime() should be called before
+	   * HAL_RTC_GetDate() to maintain consistency
+	   */
 	  HAL_RTC_GetTime(&hrtc, &rtc_time, RTC_FORMAT_BIN);
- 80005ee:	2200      	movs	r2, #0
- 80005f0:	492c      	ldr	r1, [pc, #176]	; (80006a4 <main+0xe8>)
- 80005f2:	482b      	ldr	r0, [pc, #172]	; (80006a0 <main+0xe4>)
- 80005f4:	f002 fd50 	bl	8003098 <HAL_RTC_GetTime>
+ 800062c:	2200      	movs	r2, #0
+ 800062e:	4922      	ldr	r1, [pc, #136]	; (80006b8 <main+0xfc>)
+ 8000630:	4822      	ldr	r0, [pc, #136]	; (80006bc <main+0x100>)
+ 8000632:	f002 fd31 	bl	8003098 <HAL_RTC_GetTime>
+	  HAL_RTC_GetDate(&hrtc, &rtc_date, RTC_FORMAT_BIN);
+ 8000636:	2200      	movs	r2, #0
+ 8000638:	491e      	ldr	r1, [pc, #120]	; (80006b4 <main+0xf8>)
+ 800063a:	4820      	ldr	r0, [pc, #128]	; (80006bc <main+0x100>)
+ 800063c:	f002 fe0f 	bl	800325e <HAL_RTC_GetDate>
 
-	  year = rtc_date.Year;
- 80005f8:	4b28      	ldr	r3, [pc, #160]	; (800069c <main+0xe0>)
- 80005fa:	78da      	ldrb	r2, [r3, #3]
- 80005fc:	4b2a      	ldr	r3, [pc, #168]	; (80006a8 <main+0xec>)
- 80005fe:	701a      	strb	r2, [r3, #0]
-	  month = rtc_date.Month;
- 8000600:	4b26      	ldr	r3, [pc, #152]	; (800069c <main+0xe0>)
- 8000602:	785a      	ldrb	r2, [r3, #1]
- 8000604:	4b29      	ldr	r3, [pc, #164]	; (80006ac <main+0xf0>)
- 8000606:	701a      	strb	r2, [r3, #0]
-	  day = rtc_date.Date;
- 8000608:	4b24      	ldr	r3, [pc, #144]	; (800069c <main+0xe0>)
- 800060a:	789a      	ldrb	r2, [r3, #2]
- 800060c:	4b28      	ldr	r3, [pc, #160]	; (80006b0 <main+0xf4>)
- 800060e:	701a      	strb	r2, [r3, #0]
-
-	  hour = rtc_time.Hours;
- 8000610:	4b24      	ldr	r3, [pc, #144]	; (80006a4 <main+0xe8>)
- 8000612:	781a      	ldrb	r2, [r3, #0]
- 8000614:	4b27      	ldr	r3, [pc, #156]	; (80006b4 <main+0xf8>)
- 8000616:	701a      	strb	r2, [r3, #0]
-	  min = rtc_time.Minutes;
- 8000618:	4b22      	ldr	r3, [pc, #136]	; (80006a4 <main+0xe8>)
- 800061a:	785a      	ldrb	r2, [r3, #1]
- 800061c:	4b26      	ldr	r3, [pc, #152]	; (80006b8 <main+0xfc>)
- 800061e:	701a      	strb	r2, [r3, #0]
-	  sec = rtc_time.Seconds;
- 8000620:	4b20      	ldr	r3, [pc, #128]	; (80006a4 <main+0xe8>)
- 8000622:	789a      	ldrb	r2, [r3, #2]
- 8000624:	4b25      	ldr	r3, [pc, #148]	; (80006bc <main+0x100>)
- 8000626:	701a      	strb	r2, [r3, #0]
-
-	  sprintf(sData,"%d/%d/%d",day,month,year);
- 8000628:	4b21      	ldr	r3, [pc, #132]	; (80006b0 <main+0xf4>)
- 800062a:	781b      	ldrb	r3, [r3, #0]
- 800062c:	461a      	mov	r2, r3
- 800062e:	4b1f      	ldr	r3, [pc, #124]	; (80006ac <main+0xf0>)
- 8000630:	781b      	ldrb	r3, [r3, #0]
- 8000632:	4619      	mov	r1, r3
- 8000634:	4b1c      	ldr	r3, [pc, #112]	; (80006a8 <main+0xec>)
- 8000636:	781b      	ldrb	r3, [r3, #0]
- 8000638:	9300      	str	r3, [sp, #0]
- 800063a:	460b      	mov	r3, r1
- 800063c:	4920      	ldr	r1, [pc, #128]	; (80006c0 <main+0x104>)
- 800063e:	4821      	ldr	r0, [pc, #132]	; (80006c4 <main+0x108>)
- 8000640:	f003 ffda 	bl	80045f8 <siprintf>
-	  sprintf(sTime,"%d:%d:%d",hour,min,sec);
- 8000644:	4b1b      	ldr	r3, [pc, #108]	; (80006b4 <main+0xf8>)
- 8000646:	781b      	ldrb	r3, [r3, #0]
- 8000648:	461a      	mov	r2, r3
- 800064a:	4b1b      	ldr	r3, [pc, #108]	; (80006b8 <main+0xfc>)
- 800064c:	781b      	ldrb	r3, [r3, #0]
- 800064e:	4619      	mov	r1, r3
- 8000650:	4b1a      	ldr	r3, [pc, #104]	; (80006bc <main+0x100>)
- 8000652:	781b      	ldrb	r3, [r3, #0]
- 8000654:	9300      	str	r3, [sp, #0]
- 8000656:	460b      	mov	r3, r1
- 8000658:	491b      	ldr	r1, [pc, #108]	; (80006c8 <main+0x10c>)
- 800065a:	481c      	ldr	r0, [pc, #112]	; (80006cc <main+0x110>)
- 800065c:	f003 ffcc 	bl	80045f8 <siprintf>
+	  sprintf(sData, "%02d/%02d/%02d", rtc_date.Date, rtc_date.Month, rtc_date.Year);
+ 8000640:	4b1c      	ldr	r3, [pc, #112]	; (80006b4 <main+0xf8>)
+ 8000642:	789b      	ldrb	r3, [r3, #2]
+ 8000644:	461a      	mov	r2, r3
+ 8000646:	4b1b      	ldr	r3, [pc, #108]	; (80006b4 <main+0xf8>)
+ 8000648:	785b      	ldrb	r3, [r3, #1]
+ 800064a:	4619      	mov	r1, r3
+ 800064c:	4b19      	ldr	r3, [pc, #100]	; (80006b4 <main+0xf8>)
+ 800064e:	78db      	ldrb	r3, [r3, #3]
+ 8000650:	9300      	str	r3, [sp, #0]
+ 8000652:	460b      	mov	r3, r1
+ 8000654:	491a      	ldr	r1, [pc, #104]	; (80006c0 <main+0x104>)
+ 8000656:	481b      	ldr	r0, [pc, #108]	; (80006c4 <main+0x108>)
+ 8000658:	f003 ffce 	bl	80045f8 <siprintf>
+	  sprintf(sTime, "%02d:%02d:%02d", rtc_time.Hours, rtc_time.Minutes, rtc_time.Seconds);
+ 800065c:	4b16      	ldr	r3, [pc, #88]	; (80006b8 <main+0xfc>)
+ 800065e:	781b      	ldrb	r3, [r3, #0]
+ 8000660:	461a      	mov	r2, r3
+ 8000662:	4b15      	ldr	r3, [pc, #84]	; (80006b8 <main+0xfc>)
+ 8000664:	785b      	ldrb	r3, [r3, #1]
+ 8000666:	4619      	mov	r1, r3
+ 8000668:	4b13      	ldr	r3, [pc, #76]	; (80006b8 <main+0xfc>)
+ 800066a:	789b      	ldrb	r3, [r3, #2]
+ 800066c:	9300      	str	r3, [sp, #0]
+ 800066e:	460b      	mov	r3, r1
+ 8000670:	4915      	ldr	r1, [pc, #84]	; (80006c8 <main+0x10c>)
+ 8000672:	4816      	ldr	r0, [pc, #88]	; (80006cc <main+0x110>)
+ 8000674:	f003 ffc0 	bl	80045f8 <siprintf>
 
 	  ssd1306_SetCursor(2, 3);
- 8000660:	2103      	movs	r1, #3
- 8000662:	2002      	movs	r0, #2
- 8000664:	f003 ff7e 	bl	8004564 <ssd1306_SetCursor>
-	  ssd1306_WriteString(sData, Font_7x10, Black);
- 8000668:	4b19      	ldr	r3, [pc, #100]	; (80006d0 <main+0x114>)
- 800066a:	2200      	movs	r2, #0
- 800066c:	9200      	str	r2, [sp, #0]
- 800066e:	cb0e      	ldmia	r3, {r1, r2, r3}
- 8000670:	4814      	ldr	r0, [pc, #80]	; (80006c4 <main+0x108>)
- 8000672:	f003 ff51 	bl	8004518 <ssd1306_WriteString>
+ 8000678:	2103      	movs	r1, #3
+ 800067a:	2002      	movs	r0, #2
+ 800067c:	f003 ff72 	bl	8004564 <ssd1306_SetCursor>
+	  ssd1306_WriteString(sData, Font_7x10, White);
+ 8000680:	4b13      	ldr	r3, [pc, #76]	; (80006d0 <main+0x114>)
+ 8000682:	2201      	movs	r2, #1
+ 8000684:	9200      	str	r2, [sp, #0]
+ 8000686:	cb0e      	ldmia	r3, {r1, r2, r3}
+ 8000688:	480e      	ldr	r0, [pc, #56]	; (80006c4 <main+0x108>)
+ 800068a:	f003 ff45 	bl	8004518 <ssd1306_WriteString>
 
 	  ssd1306_SetCursor(2, 20);
- 8000676:	2114      	movs	r1, #20
- 8000678:	2002      	movs	r0, #2
- 800067a:	f003 ff73 	bl	8004564 <ssd1306_SetCursor>
-	  ssd1306_WriteString(sTime, Font_6x8, Black);
- 800067e:	4b15      	ldr	r3, [pc, #84]	; (80006d4 <main+0x118>)
- 8000680:	2200      	movs	r2, #0
- 8000682:	9200      	str	r2, [sp, #0]
- 8000684:	cb0e      	ldmia	r3, {r1, r2, r3}
- 8000686:	4811      	ldr	r0, [pc, #68]	; (80006cc <main+0x110>)
- 8000688:	f003 ff46 	bl	8004518 <ssd1306_WriteString>
+ 800068e:	2114      	movs	r1, #20
+ 8000690:	2002      	movs	r0, #2
+ 8000692:	f003 ff67 	bl	8004564 <ssd1306_SetCursor>
+	  ssd1306_WriteString(sTime, Font_6x8, White);
+ 8000696:	4b0f      	ldr	r3, [pc, #60]	; (80006d4 <main+0x118>)
+ 8000698:	2201      	movs	r2, #1
+ 800069a:	9200      	str	r2, [sp, #0]
+ 800069c:	cb0e      	ldmia	r3, {r1, r2, r3}
+ 800069e:	480b      	ldr	r0, [pc, #44]	; (80006cc <main+0x110>)
+ 80006a0:	f003 ff3a 	bl	8004518 <ssd1306_WriteString>
 
 	  ssd1306_UpdateScreen();
- 800068c:	f003 fe38 	bl	8004300 <ssd1306_UpdateScreen>
+ 80006a4:	f003 fe2c 	bl	8004300 <ssd1306_UpdateScreen>
 	  HAL_Delay(1000);
- 8000690:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
- 8000694:	f000 fc00 	bl	8000e98 <HAL_Delay>
-	  HAL_RTC_GetDate(&hrtc, &rtc_date, RTC_FORMAT_BIN);
- 8000698:	e7a4      	b.n	80005e4 <main+0x28>
- 800069a:	bf00      	nop
- 800069c:	20000190 	.word	0x20000190
- 80006a0:	20000160 	.word	0x20000160
- 80006a4:	20000194 	.word	0x20000194
- 80006a8:	2000018d 	.word	0x2000018d
- 80006ac:	2000018c 	.word	0x2000018c
- 80006b0:	2000018b 	.word	0x2000018b
+ 80006a8:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+ 80006ac:	f000 fbf4 	bl	8000e98 <HAL_Delay>
+	  HAL_RTC_GetTime(&hrtc, &rtc_time, RTC_FORMAT_BIN);
+ 80006b0:	e7bc      	b.n	800062c <main+0x70>
+ 80006b2:	bf00      	nop
  80006b4:	20000188 	.word	0x20000188
- 80006b8:	20000189 	.word	0x20000189
- 80006bc:	2000018a 	.word	0x2000018a
+ 80006b8:	2000018c 	.word	0x2000018c
+ 80006bc:	20000160 	.word	0x20000160
  80006c0:	08004f58 	.word	0x08004f58
- 80006c4:	200001a8 	.word	0x200001a8
- 80006c8:	08004f64 	.word	0x08004f64
- 80006cc:	200001b0 	.word	0x200001b0
- 80006d0:	08005d18 	.word	0x08005d18
- 80006d4:	08005d0c 	.word	0x08005d0c
+ 80006c4:	200001a0 	.word	0x200001a0
+ 80006c8:	08004f68 	.word	0x08004f68
+ 80006cc:	200001ac 	.word	0x200001ac
+ 80006d0:	08005d20 	.word	0x08005d20
+ 80006d4:	08005d14 	.word	0x08005d14
 
 080006d8 <SystemClock_Config>:
 /**
@@ -1966,7 +1968,7 @@ LoopForever:
   ldr r1, =_edata
  8000da4:	2000005c 	.word	0x2000005c
   ldr r2, =_sidata
- 8000da8:	08005d68 	.word	0x08005d68
+ 8000da8:	08005d70 	.word	0x08005d70
   ldr r2, =_sbss
  8000dac:	2000005c 	.word	0x2000005c
   ldr r4, =_ebss
@@ -6640,7 +6642,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  80027ec:	40022000 	.word	0x40022000
  80027f0:	40021000 	.word	0x40021000
  80027f4:	04c4b400 	.word	0x04c4b400
- 80027f8:	08004f70 	.word	0x08004f70
+ 80027f8:	08004f78 	.word	0x08004f78
  80027fc:	20000000 	.word	0x20000000
  8002800:	20000004 	.word	0x20000004
 
@@ -6821,7 +6823,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8002900:	4618      	mov	r0, r3
  8002902:	bd80      	pop	{r7, pc}
  8002904:	40021000 	.word	0x40021000
- 8002908:	08004f80 	.word	0x08004f80
+ 8002908:	08004f88 	.word	0x08004f88
 
 0800290c <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -6848,7 +6850,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  800292c:	4618      	mov	r0, r3
  800292e:	bd80      	pop	{r7, pc}
  8002930:	40021000 	.word	0x40021000
- 8002934:	08004f80 	.word	0x08004f80
+ 8002934:	08004f88 	.word	0x08004f88
 
 08002938 <RCC_GetSysClockFreqFromPLLSource>:
 /**
@@ -9795,7 +9797,7 @@ HAL_StatusTypeDef UART_SetConfig(UART_HandleTypeDef *huart)
  8003b06:	bf00      	nop
  8003b08:	40008000 	.word	0x40008000
  8003b0c:	00f42400 	.word	0x00f42400
- 8003b10:	08004f88 	.word	0x08004f88
+ 8003b10:	08004f90 	.word	0x08004f90
       }
       else
       {
@@ -10934,8 +10936,8 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8004178:	f85d 7b04 	ldr.w	r7, [sp], #4
  800417c:	4770      	bx	lr
  800417e:	bf00      	nop
- 8004180:	08004fa0 	.word	0x08004fa0
- 8004184:	08004fa8 	.word	0x08004fa8
+ 8004180:	08004fa8 	.word	0x08004fa8
+ 8004184:	08004fb0 	.word	0x08004fb0
 
 08004188 <ssd1306_Reset>:
 #include <stdlib.h>
@@ -11772,10 +11774,10 @@ void ssd1306_SetDisplayOn(const uint8_t on) {
  8004686:	4798      	blx	r3
  8004688:	3601      	adds	r6, #1
  800468a:	e7f2      	b.n	8004672 <__libc_init_array+0x1e>
- 800468c:	08005d60 	.word	0x08005d60
- 8004690:	08005d60 	.word	0x08005d60
- 8004694:	08005d60 	.word	0x08005d60
- 8004698:	08005d64 	.word	0x08005d64
+ 800468c:	08005d68 	.word	0x08005d68
+ 8004690:	08005d68 	.word	0x08005d68
+ 8004694:	08005d68 	.word	0x08005d68
+ 8004698:	08005d6c 	.word	0x08005d6c
 
 0800469c <__retarget_lock_acquire_recursive>:
  800469c:	4770      	bx	lr
@@ -12295,11 +12297,11 @@ void ssd1306_SetDisplayOn(const uint8_t on) {
  8004b40:	4638      	mov	r0, r7
  8004b42:	f000 f879 	bl	8004c38 <_printf_i>
  8004b46:	e7eb      	b.n	8004b20 <_svfiprintf_r+0x1c0>
- 8004b48:	08005d24 	.word	0x08005d24
- 8004b4c:	08005d2e 	.word	0x08005d2e
+ 8004b48:	08005d2c 	.word	0x08005d2c
+ 8004b4c:	08005d36 	.word	0x08005d36
  8004b50:	00000000 	.word	0x00000000
  8004b54:	080048ad 	.word	0x080048ad
- 8004b58:	08005d2a 	.word	0x08005d2a
+ 8004b58:	08005d32 	.word	0x08005d32
 
 08004b5c <_printf_common>:
  8004b5c:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -12632,8 +12634,8 @@ void ssd1306_SetDisplayOn(const uint8_t on) {
  8004e6c:	f104 0619 	add.w	r6, r4, #25
  8004e70:	e7f5      	b.n	8004e5e <_printf_i+0x226>
  8004e72:	bf00      	nop
- 8004e74:	08005d35 	.word	0x08005d35
- 8004e78:	08005d46 	.word	0x08005d46
+ 8004e74:	08005d3d 	.word	0x08005d3d
+ 8004e78:	08005d4e 	.word	0x08005d4e
 
 08004e7c <memmove>:
  8004e7c:	4288      	cmp	r0, r1

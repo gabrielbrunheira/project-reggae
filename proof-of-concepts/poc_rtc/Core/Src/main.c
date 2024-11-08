@@ -49,12 +49,10 @@ UART_HandleTypeDef hlpuart1;
 RTC_HandleTypeDef hrtc;
 
 /* USER CODE BEGIN PV */
-uint8_t hour, min, sec, day, month, year;
-
 RTC_DateTypeDef rtc_date;
 RTC_TimeTypeDef rtc_time;
 
-char sData[8], sTime[8];
+char sData[9], sTime[9];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -105,32 +103,33 @@ int main(void)
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
   ssd1306_Init();
-  ssd1306_Fill(White);
+  ssd1306_Fill(Black);
+
+  rtc_date = (RTC_DateTypeDef){.WeekDay = 3, .Date = 7, .Month = 11, .Year = 24};
+  rtc_time = (RTC_TimeTypeDef){.Hours = 22, .Minutes = 16, .Seconds= 0};
+
+  HAL_RTC_SetDate(&hrtc, &rtc_date, RTC_FORMAT_BIN);
+  HAL_RTC_SetTime(&hrtc, &rtc_time, RTC_FORMAT_BIN);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_RTC_GetDate(&hrtc, &rtc_date, RTC_FORMAT_BIN);
+	  /** As stated in its comment, HAL_RTC_GetTime() should be called before
+	   * HAL_RTC_GetDate() to maintain consistency
+	   */
 	  HAL_RTC_GetTime(&hrtc, &rtc_time, RTC_FORMAT_BIN);
+	  HAL_RTC_GetDate(&hrtc, &rtc_date, RTC_FORMAT_BIN);
 
-	  year = rtc_date.Year;
-	  month = rtc_date.Month;
-	  day = rtc_date.Date;
-
-	  hour = rtc_time.Hours;
-	  min = rtc_time.Minutes;
-	  sec = rtc_time.Seconds;
-
-	  sprintf(sData,"%d/%d/%d",day,month,year);
-	  sprintf(sTime,"%d:%d:%d",hour,min,sec);
+	  sprintf(sData, "%02d/%02d/%02d", rtc_date.Date, rtc_date.Month, rtc_date.Year);
+	  sprintf(sTime, "%02d:%02d:%02d", rtc_time.Hours, rtc_time.Minutes, rtc_time.Seconds);
 
 	  ssd1306_SetCursor(2, 3);
-	  ssd1306_WriteString(sData, Font_7x10, Black);
+	  ssd1306_WriteString(sData, Font_7x10, White);
 
 	  ssd1306_SetCursor(2, 20);
-	  ssd1306_WriteString(sTime, Font_6x8, Black);
+	  ssd1306_WriteString(sTime, Font_6x8, White);
 
 	  ssd1306_UpdateScreen();
 	  HAL_Delay(1000);

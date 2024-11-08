@@ -1,3 +1,5 @@
-2024-11-06 00:17:11,197 [INFO] WebApp:354 - JxBrowser engine has been closed 
-2024-11-06 00:17:11,222 [INFO] WebAppUi:453 - JxBrowser engine has been closed 
-2024-11-06 00:17:11,222 [INFO] WebAppUi:490 - Close the Jxbrowser engine manually
+2024-11-07 22:04:11,771 [INFO] Activator:176 - 
+
+
+2024-11-07 22:04:11,779 [INFO] Activator:177 - !SESSION log4j initialized
+2024-11-07 22:04:18,263 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 

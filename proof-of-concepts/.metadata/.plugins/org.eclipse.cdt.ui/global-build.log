@@ -19,3 +19,241 @@ arm-none-eabi-size  poc_rtc.elf
   23896	    100	   2740	  26736	   6870	poc_rtc.elf
 Finished building: default.size.stdout
  
+21:53:33 **** Incremental Build of configuration Debug for project poc_adc_capacitive_soil ****
+make -j20 all 
+arm-none-eabi-size  poc_adc_capacitive_soil.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41112	    476	   2780	  44368	   ad50	poc_adc_capacitive_soil.elf
+Finished building: default.size.stdout
+ 
+22:08:45 **** Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-size  poc_rtc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23896	    100	   2740	  26736	   6870	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+22:14:45 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:111:27: error: 'rtc_data' undeclared (first use in this function); did you mean 'rtc_date'?
+  111 |   HAL_RTC_SetDate(&hrtc, &rtc_data, RTC_FORMAT_BIN);
+      |                           ^~~~~~~~
+      |                           rtc_date
+../Core/Src/main.c:111:27: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+22:15:32 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23928	    100	   2740	  26768	   6890	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:17:23 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23972	    100	   2740	  26812	   68bc	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:20:03 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  24040	    100	   2748	  26888	   6908	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:20:37 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  24040	    100	   2748	  26888	   6908	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:20:53 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  24032	    100	   2748	  26880	   6900	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:26:08 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  24020	    100	   2748	  26868	   68f4	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:27:02 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23980	    100	   2748	  26828	   68cc	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:28:24 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23980	    100	   2748	  26828	   68cc	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:30:02 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:117:11: warning: unused variable 'rtc_status' [-Wunused-variable]
+  117 |   uint8_t rtc_status;
+      |           ^~~~~~~~~~
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23980	    100	   2748	  26828	   68cc	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:31:31 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23956	    100	   2740	  26796	   68ac	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:36:31 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23896	    100	   2732	  26728	   6868	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:38:01 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:125:41: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  125 |           sprintf(sData, "%02d/%02d/%02d", rtc_date.Date, rtc_date.Month, rtc_date.Year);
+      |                                         ^
+../Core/Src/main.c:125:11: note: 'sprintf' output between 9 and 12 bytes into a destination of size 8
+  125 |           sprintf(sData, "%02d/%02d/%02d", rtc_date.Date, rtc_date.Month, rtc_date.Year);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:126:41: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  126 |           sprintf(sTime, "%02d:%02d:%02d", rtc_time.Hours, rtc_time.Minutes, rtc_time.Seconds);
+      |                                         ^
+../Core/Src/main.c:126:11: note: 'sprintf' output between 9 and 12 bytes into a destination of size 8
+  126 |           sprintf(sTime, "%02d:%02d:%02d", rtc_time.Hours, rtc_time.Minutes, rtc_time.Seconds);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23904	    100	   2732	  26736	   6870	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:38:46 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23904	    100	   2740	  26744	   6878	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
+22:42:38 **** Incremental Build of configuration Debug for project poc_rtc ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I"C:/Users/gabriel.brunheira/Git/pessoal/project-reggae/proof-of-concepts/poc_rtc/Drivers/oled_ssd1306" -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poc_rtc.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gabriel.brunheira\Git\pessoal\project-reggae\proof-of-concepts\poc_rtc\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poc_rtc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poc_rtc.elf
+ 
+arm-none-eabi-size  poc_rtc.elf 
+arm-none-eabi-objdump -h -S poc_rtc.elf  > "poc_rtc.list"
+   text	   data	    bss	    dec	    hex	filename
+  23904	    100	   2740	  26744	   6878	poc_rtc.elf
+Finished building: default.size.stdout
+ 
+Finished building: poc_rtc.list
+ 
