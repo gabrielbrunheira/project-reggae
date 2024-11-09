@@ -115,7 +115,7 @@ int main(void)
 	adc_raw = HAL_ADC_GetValue(&hadc1);
 	soil_hum = (float) adc_raw * 100.0/4096.0;
 
-	sprintf(hum, "%.1f%%", soil_hum);
+	sprintf(hum, "%04.1f%%", soil_hum);
 
     ssd1306_SetCursor(2, 18);
 	ssd1306_WriteString(hum, Font_11x18, Black);

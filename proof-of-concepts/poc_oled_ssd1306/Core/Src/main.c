@@ -227,8 +227,9 @@ int main(void)
 
   //ssd1306_DrawBitmap(0,0,garfield_128x64,128,64,White);
   //ssd1306_DrawBitmap(0,0,github_logo_64x64,64,64,White);
-  ssd1306_FillRectangle(0, 0, 43, 15, White);
-  ssd1306_DrawBitmap(44, 0, woodstock, 20, 20, White);
+  ssd1306_FillRectangle(0, 0, 108, 15, White);
+  ssd1306_FillRectangle(64, 16, 128, 64, White);
+  ssd1306_DrawBitmap(108, 0, woodstock, 20, 20, White);
   ssd1306_DrawBitmap(0,16,snoopy_48x48,48,48,White);
   ssd1306_FillRectangle(48, 16, 64, 63, White);
   ssd1306_UpdateScreen();
