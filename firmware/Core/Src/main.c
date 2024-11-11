@@ -23,6 +23,7 @@
 #include "i2c.h"
 #include "usart.h"
 #include "rtc.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -97,6 +98,7 @@ int main(void)
   MX_ADC3_Init();
   MX_I2C1_Init();
   MX_RTC_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
