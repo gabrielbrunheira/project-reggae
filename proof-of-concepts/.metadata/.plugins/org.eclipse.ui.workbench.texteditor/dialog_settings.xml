@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="SSD1306_INCLUDE_FONT_6x8"/>
+		<item key="selection" value="bank"/>
 		<list key="findhistory">
+			<item value="page"/>
+			<item value="bank"/>
 			<item value="SSD1306_INCLUDE_FONT_6x8"/>
 			<item value="SSD1306_WIDTH"/>
 			<item value="stm32g4"/>
