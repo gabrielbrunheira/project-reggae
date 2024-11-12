@@ -28,7 +28,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
+#include "mk_dht11.h"
+#include "ssd1306.h"
+#include "ssd1306_fonts.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -94,13 +97,14 @@ int main(void)
   MX_GPIO_Init();
   MX_LPUART1_UART_Init();
   MX_ADC1_Init();
-  MX_ADC2_Init();
-  MX_ADC3_Init();
   MX_I2C1_Init();
   MX_RTC_Init();
   MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_GPIO_WritePin(RELAY1_GPIO_Port, RELAY1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(RELAY2_GPIO_Port, RELAY2_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(RELAY3_GPIO_Port, RELAY3_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(RELAY4_GPIO_Port, RELAY4_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
 
   /* Init scheduler */

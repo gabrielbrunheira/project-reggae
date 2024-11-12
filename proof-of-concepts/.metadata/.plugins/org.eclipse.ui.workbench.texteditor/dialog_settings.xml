@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="bank"/>
+		<item key="selection" value="HAL_GPIO_EXTI_Callback"/>
 		<list key="findhistory">
+			<item value="HAL_GPIO_EXTI_Callback"/>
 			<item value="page"/>
 			<item value="bank"/>
 			<item value="SSD1306_INCLUDE_FONT_6x8"/>

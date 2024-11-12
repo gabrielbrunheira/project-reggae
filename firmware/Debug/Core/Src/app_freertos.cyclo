@@ -1,0 +1,9 @@
+../Core/Src/app_freertos.c:156:6:MX_FREERTOS_Init	1
+../Core/Src/app_freertos.c:229:6:transmitUARTTask	1
+../Core/Src/app_freertos.c:247:6:updateDisplayTask	6
+../Core/Src/app_freertos.c:381:6:readSensorsRTCTask	2
+../Core/Src/app_freertos.c:456:6:controlWateringTask	2
+../Core/Src/app_freertos.c:484:6:updateLogTask	1
+../Core/Src/app_freertos.c:502:6:cfgWateringTask	1
+../Core/Src/app_freertos.c:515:6:ssd1306_WriteTemp	1
+../Core/Src/app_freertos.c:528:6:HAL_GPIO_EXTI_Callback	4
